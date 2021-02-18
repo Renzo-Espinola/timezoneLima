@@ -29,7 +29,7 @@ class DateServiceTest {
     @Test
     void obtenerFechaHora_isok_test() throws Exception {
 
-        assertThat(DateService.obtenerFechaHora().compareTo(fechaCorrecta));
+        assertThat(DateService.obtenerFechaHora().compareToIgnoreCase(fechaCorrecta)).isOne();
 
     }
 }

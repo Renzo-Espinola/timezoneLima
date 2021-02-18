@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 public class TestController {
 
-    private final com.exa.timezone.service.DateService dateService;
+    final com.exa.timezone.service.DateService dateService;
 
     public TestController(DateService dateService) {
         this.dateService = dateService;
@@ -18,6 +19,6 @@ public class TestController {
 
     @GetMapping("/Gettime")
     public ResponseEntity<String> getTime() {
-         return  ResponseEntity.ok(dateService.obtenerFechaHora());
+        return ResponseEntity.ok(DateService.obtenerFechaHora());
     }
 }
